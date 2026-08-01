@@ -1,0 +1,77 @@
+/* BUG S1-T05: sidebar not collapsible styles incomplete */
+.lesson-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1rem;
+}
+
+.lesson-sidebar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1rem;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.lesson-sidebar.collapsed {
+    width: 0;
+    /* BUG: missing display:none or transform */
+}
+
+.lesson-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.lesson-item.locked { opacity: 0.5; }
+
+.video-container {
+    background: #000;
+    border-radius: var(--radius);
+    aspect-ratio: 16/9;
+    position: relative;
+    /* BUG S1-T06: z-index too low */
+    z-index: 0;
+}
+
+.video-container video,
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lesson-sidebar {
+    /* BUG S1-T06: sidebar covers video */
+    z-index: 10;
+    position: relative;
+}
+
+.comments-section {
+    margin-top: 1.5rem;
+}
+
+.comments-section textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    /* BUG S1-T07: ugly unstyled inputs */
+}
+
+.tabs { display: flex; gap: 8px; margin-bottom: 1rem; }
+.tab-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    cursor: pointer;
+}
+.tab-btn.active { background: var(--accent); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+@media (max-width: 768px) {
+    .lesson-layout { grid-template-columns: 1fr; }
+}

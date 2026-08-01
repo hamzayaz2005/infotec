@@ -1,0 +1,26 @@
+/* BUG S1-T07: login button doesn't look like button */
+.btn-login {
+padding: 8px 16px;
+background: var(--accent);
+color: var(--text-primary);
+border: none;
+cursor: pointer;
+border-radius: var(--radius);
+}
+.btn-login:hover {
+opacity: 0.9;
+}
+.btn, .btn-primary, .btn-subscribe {
+padding: 8px 20px;
+border: none;
+border-radius: var(--radius);
+background: var(--accent);
+color: var(--text-primary);
+/* BUG S1-T11: inconsistent padding */
+margin: 2px;
+cursor: pointer;
+}
+.btn-subscribe {
+padding: 8px 20px;
+font-size: 1rem;
+}

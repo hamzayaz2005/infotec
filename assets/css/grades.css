@@ -1,0 +1,39 @@
+/* InfoTec — grades page styles
+   FIXED BUG S1-T09: grades table is now fully usable and responsive on narrow screens */
+
+.grades-wrap {
+    margin-top: 1.5rem;
+    /* FIX: enable horizontal scrolling specifically inside the table wrapper to prevent main page overflow */
+    overflow-x: auto;
+}
+
+.grades-table {
+    width: 100%;
+    /* BUG FIX: retain min-width for optimal column readability, now safely contained within .grades-wrap */
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.grades-table th,
+.grades-table td {
+    padding: 12px 10px;
+    border: 1px solid var(--border);
+    text-align: right;
+}
+
+.grades-table thead tr {
+    background: var(--card-bg);
+}
+
+.grades-table tbody tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* إصلاح واستجابة الجدول على شاشات الموبايل الضيقة */
+@media (max-width: 640px) {
+    .grades-table th,
+    .grades-table td {
+        /* FIX: reduce cell padding on small displays to optimize readable space */
+        padding: 8px 6px;
+    }
+}
