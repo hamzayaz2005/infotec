@@ -13,20 +13,20 @@ require __DIR__ . '/includes/header.php';
 <section class="hero">
     <h1>مرحباً بكم في InfoTec</h1>
     <p>منصة تعليمية ذكية — تم تحديث وإصلاح النظام بنجاح 🚀</p>
-    <button id="theme-toggle" class="theme-toggle" type="button">🌙 وضع ليلي</button>
+    <button id="theme-toggle" class="theme-toggle" type="button">اهلا بكم في تجربة سلسلة وممتعة 😁😁</button>
 </section>
 
 <div class="stats-row">
     <div class="stat-box">
-        <div class="num" data-counter="250">100</div>
+        <div class="num" data-counter="250">0</div>
         <div>طالب</div>
     </div>
     <div class="stat-box">
-        <div class="num" data-counter="48">100</div>
+        <div class="num" data-counter="48">0</div>
         <div>كورس</div>
     </div>
     <div class="stat-box">
-        <div class="num" data-counter="12">100</div>
+        <div class="num" data-counter="12">0</div>
         <div>مدرس</div>
     </div>
 </div>
@@ -63,4 +63,4 @@ require __DIR__ . '/includes/header.php';
     </div>
 </div>
 
-<?php require DIR__ . '/includes/footer.php'; ?>
+<?php require __DIR__ . '/includes/footer.php'; ?>

@@ -1,7 +1,9 @@
-// BUG S2-T01: crashes because element doesn't exist
+// BUG S2-T01: Fixed crash by checking if element exists before modifying innerHTML
 document.addEventListener('DOMContentLoaded', () => {
     const heroSlider = document.querySelector('#hero-slider');
-    heroSlider.innerHTML = '<p>Slider</p>';
+    if (heroSlider) {
+        heroSlider.innerHTML = '<p>Slider</p>';
+    }
 
     const courseGrid = document.querySelector('.courses-grid');
     if (courseGrid) {
@@ -9,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// BUG S2-T17: duplicate listeners if included twice
-document.querySelectorAll('.lesson-item').forEach(item => {
-    item.addEventListener('click', () => console.log('lesson'));
-});
+// BUG S2-T17: Fixed duplicate listeners using defensive handling / DOM check
+if (!window.lessonItemListenersSet) {
+    document.querySelectorAll('.lesson-item').forEach(item => {
+        item.addEventListener('click', () => console.log('lesson'));
+    });
+    window.lessonItemListenersSet = true;
+}

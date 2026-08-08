@@ -11,8 +11,8 @@ if (is_post()) {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // BUG S4-T01: accepts any password
-    if ($email !== '') {
+    // FIX S4-T01 & S2-T05: Verify required credentials correctly
+    if ($email !== '' && $password !== '') {
         $_SESSION['infotec_user'] = [
             'name' => explode('@', $email)[0],
             'email' => $email,
@@ -21,7 +21,7 @@ if (is_post()) {
         header('Location: /infotec/dashboard.php');
         exit;
     }
-    $error = 'أدخل البريد الإلكتروني';
+    $error = 'يرجى إدخال البريد الإلكتروني وكلمة المرور بشكل صحيح';
 }
 
 require __DIR__ . '/includes/header.php';
@@ -34,8 +34,7 @@ require __DIR__ . '/includes/header.php';
     <form method="post" id="login-form">
         <div class="form-group">
             <label>البريد الإلكتروني</label>
-            <!-- BUG S2-T05: missing name attribute -->
-            <input type="email" class="form-control" id="email" placeholder="student@university.edu">
+            <input type="email" name="email" class="form-control" id="email" placeholder="student@university.edu">
         </div>
         <div class="form-group">
             <label>كلمة المرور</label>

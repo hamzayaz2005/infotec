@@ -12,17 +12,28 @@ require __DIR__ . '/includes/header.php';
 <form id="quiz-form" style="margin-top:1.5rem;max-width:600px">
     <div class="panel" style="margin-bottom:1rem">
         <p><strong>1.</strong> ما هو الذكاء الاصطناعي؟</p>
-        <label><input type="radio" value="a"> محاكاة الذكاء البشري</label><br>
-        <label><input type="radio" value="b"> نوع من الفيروسات</label>
+        <label><input type="radio" name="question_1" value="a"> محاكاة الذكاء البشري</label><br>
+        <label><input type="radio" name="question_1" value="b"> نوع من الفيروسات</label>
     </div>
     <button type="submit" class="btn" id="quiz-submit">تسليم الإجابات</button>
 </form>
 
 <script>
-// BUG S2-T10: quiz not captured as JSON
+// FIX S2-T10: quiz captured as JSON successfully
 document.getElementById('quiz-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('الاختبار غير مربوط بالـ Backend');
+    
+    const formData = new FormData(this);
+    const answers = {};
+    
+    formData.forEach((value, key) => {
+        answers[key] = value;
+    });
+    
+    const jsonPayload = JSON.stringify(answers);
+    
+    console.log('Quiz Answers JSON Payload:', jsonPayload);
+    alert('تم تسليم الإجابات وتحويلها إلى JSON بنجاح!');
 });
 </script>
 
