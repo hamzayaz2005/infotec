@@ -1,5 +1,6 @@
 /* BUG S1-T01: awful eye-hurting colors on purpose */
 :root {
+<<<<<<< HEAD
     --bg-primary: #00FF00;
     --bg-secondary: #FF00FF;
     --text-primary: #FFFF00;
@@ -11,6 +12,19 @@
     --footer-bg: #00CED1;
     --radius: 4px;
     --font-main: Comic Sans MS, cursive;
+=======
+    --bg-primary: #0F172A;
+    --bg-secondary: #1e293b;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --accent: #F97316;
+    --card-bg: #1E293B;
+    --border: #334155;
+    --header-bg: #0F172A;
+    --footer-bg: #0F172A;
+    --radius: 16px;
+    --font-main:'Tajawai','Segoe UI', Roboto, sans-serif;
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
 }
 
 /* CORRECT (students should use):
@@ -21,4 +35,8 @@
     --accent: #2563eb;
     ...
 }
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004

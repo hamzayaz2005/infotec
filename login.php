@@ -7,6 +7,7 @@ require_once __DIR__ . '/config/database.php';
 $pageTitle = 'تسجيل الدخول';
 $error = '';
 
+<<<<<<< HEAD
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -37,11 +38,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = 'حدث خطأ في النظام، يرجى المحاولة لاحقاً.';
         }
     }
+=======
+if (is_post()) {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // FIX S4-T01 & S2-T05: Verify required credentials correctly
+    if ($email !== '' && $password !== '') {
+        $_SESSION['infotec_user'] = [
+            'name' => explode('@', $email)[0],
+            'email' => $email,
+            'role' => 'student',
+        ];
+        header('Location: /infotec/dashboard.php');
+        exit;
+    }
+    $error = 'يرجى إدخال البريد الإلكتروني وكلمة المرور بشكل صحيح';
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
 }
 
 require __DIR__ . '/includes/header.php';
 ?>
 
+<<<<<<< HEAD
 <div class="auth-container">
     <h1 class="auth-title">تسجيل الدخول</h1>
     
@@ -73,6 +92,25 @@ require __DIR__ . '/includes/header.php';
     </form>
 
     <p class="auth-footer"><a href="/infotec/register.php">إنشاء حساب جديد</a></p>
+=======
+<div style="max-width:400px;margin:2rem auto">
+    <h1 style="margin-bottom:1.5rem">تسجيل الدخول</h1>
+    <?php if ($error): ?><div class="alert alert-error"><?= e($error) ?></div><?php endif; ?>
+
+    <form method="post" id="login-form">
+        <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="student@university.edu">
+        </div>
+        <div class="form-group">
+            <label>كلمة المرور</label>
+            <input type="password" name="password" class="form-control" id="password">
+            <button type="button" onclick="togglePassword()" style="margin-top:4px;font-size:0.8rem">إظهار/إخفاء</button>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">دخول</button>
+    </form>
+    <p style="margin-top:1rem;text-align:center"><a href="/infotec/register.php">إنشاء حساب جديد</a></p>
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
 </div>
 
 <script src="<?= asset('js/auth.js') ?>"></script>

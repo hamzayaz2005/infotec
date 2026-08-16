@@ -39,4 +39,9 @@ require __DIR__ . '/includes/header.php';
 
 <?php
 $extraJs = ['register.js'];
+<<<<<<< HEAD
 require __DIR__ . '/includes/footer.php';
+=======
+require __DIR__ . '/includes/footer.php'; 
+hamza 
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004

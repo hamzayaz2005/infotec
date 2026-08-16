@@ -28,8 +28,17 @@
             <a href="<?= infotec_url('dashboard.php') ?>">لوحتي</a>
             <!-- BUG S1-T09: search missing -->
             <a href="<?= infotec_url('login.php') ?>" class="btn-login">تسجيل الدخول</a>
+<<<<<<< HEAD
         </nav>
         <span class="user-label">زائر</span>
     </div>
+=======
+            <button class="theme-toggle" aria-label="Toggle Theme">🌙</button>
+        </nav>
+        <span class="user-label">زائر</span>
+    </div>
+    <link rel="stylesheet" href="assets/css/theme.css?v=1.0">
+<script src="assets/js/theme.js" defer></script>
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
 </header>
 <main class="site-main">

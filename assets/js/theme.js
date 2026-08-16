@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Dark Mode Toggle & Persistence Script (Fixed for HTML/Body Root)
  * Fixes: BUG S2-T01, S1-T02, BUG S2-T13, BUG S2-T14 (EventListener Guard)
@@ -57,3 +58,21 @@
         initTheme();
     }
 })();
+=======
+const themeToggleBtn = document.querySelector('.theme-toggle');
+
+themeToggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004

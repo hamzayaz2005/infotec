@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => { 
   const lessonLayout = document.getElementById('lessonLayout'); 
   // تصحيح المعرفات لتطابق الأزرار في ملف lesson.php
@@ -18,3 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }); 
   } 
 });
+=======
+// alias for course.js sidebar - BUG file referenced in tasks
+// See course.js
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004

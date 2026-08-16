@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ==========================================================
    InfoTec UI/UX Button Design System & Component Fixes
    Fixes: BUG S1-T07 (Login Button Affordance) & BUG S1-T11 (WCAG Padding)
@@ -114,4 +115,31 @@
 .auth-footer {
     margin-top: 1.25rem;
     text-align: center;
+=======
+/* ==========================================
+   FIXED: Button Styles & Consistency (S1-T07 & S1-T11)
+   ========================================== */
+
+/* 1. Base Styles for All Buttons */
+.btn, 
+.btn-primary, 
+.btn-login, 
+.btn-subscribe {
+    padding: 8px 20px;
+    background: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius);
+    margin: 2px;
+    font-size: 1rem;
+}
+
+/* 2. Unified Hover Interaction */
+.btn:hover, 
+.btn-primary:hover, 
+.btn-login:hover, 
+.btn-subscribe:hover {
+    opacity: 0.9;
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
 }

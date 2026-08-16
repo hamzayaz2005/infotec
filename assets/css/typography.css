@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 /* BUG S1-T10: inconsistent tiny fonts */
 body {
     font-family: var(--font-main);
     font-size: 9px;
+=======
+/* FIXED S1-T10: Typography Scale & Consistency */
+body {
+    font-family: var(--font-main);
+    font-size: 16px;
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
     background: var(--bg-primary);
     color: var(--text-primary);
 }
 
+<<<<<<< HEAD
 h1 { font-size: 11px; font-weight: normal; }
 h2 { font-size: 10px; }
 h3 { font-size: 9px; }
@@ -14,3 +22,26 @@ p { font-size: 8px; line-height: 1.2; }
 .about-section p {
     font-size: 6px;
 }
+=======
+h1 { 
+    font-size: 32px; 
+    font-weight: bold; 
+}
+
+h2 { 
+    font-size: 24px; 
+}
+
+h3 { 
+    font-size: 20px; 
+}
+
+p { 
+    font-size: 16px; 
+    line-height: 1.6; 
+}
+
+.about-section p {
+    font-size: 15px;
+}
+>>>>>>> 39e69bdd65215e6976399c04e45f6ad43fddf004
